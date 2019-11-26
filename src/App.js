@@ -1,14 +1,11 @@
 import React from 'react';
-import './App.css';
 import { Switch, Route, Redirect } from 'react-router';
 import Layout from './layouts/Layout';
 import Header from './components/Header/Header';
 import Sidebar from './components/Sidebar/Sidebar';
 import Content from './components/Content/Content';
+import Games from './components/Games/Games';
 
-const home = () => {
-  return <div>Home</div>;
-};
 const about = () => {
   return <div>About</div>;
 };
@@ -22,12 +19,12 @@ function App() {
       <Header />
       <Sidebar />
       <Content>
-        {/* <Switch>
+        <Switch>
           <Route path="/about" component={about} />
           <Route path="/contacts" component={contacts} />
-          <Route path="/" exact component={home} />
+          <Route path="/" exact component={Games} />
           <Redirect to="/" />
-        </Switch> */}
+        </Switch>
       </Content>
     </Layout>
   );
