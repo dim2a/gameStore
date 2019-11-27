@@ -7,7 +7,8 @@ const Content = props => {
 
 const ContentTag = styled.div`
   grid-area: content;
-  background-color: red;
+  background-color: #eee;
+  padding: 10px;
 `;
 
 export default Content;
