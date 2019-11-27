@@ -6,8 +6,9 @@ import Sidebar from './components/Sidebar/Sidebar';
 import Content from './components/Content/Content';
 import Games from './components/Games/Games';
 
-const detail = () => {
-  return <div>Detail</div>;
+const detail = props => {
+  console.log(props);
+  return <div>{`Detail ${props.match.params.id}`}</div>;
 };
 const about = () => {
   return <div>About</div>;

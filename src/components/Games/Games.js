@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { NavLink } from 'react-router-dom';
+import { NavLink, withRouter } from 'react-router-dom';
 import { fetchGames } from '../../redux/actions/gamesAction';
 import { getGames } from '../../utils/selectors';
 import styled from 'styled-components';
@@ -71,4 +71,9 @@ const Head4Tag = styled.h4`
   margin: 5px 0;
 `;
 
-export default connect(mapStateToProps, mapDispatchToProps)(Games);
+let WithUrlDataComponent = withRouter(Games);
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(WithUrlDataComponent);
