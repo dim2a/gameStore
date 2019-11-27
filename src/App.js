@@ -6,6 +6,9 @@ import Sidebar from './components/Sidebar/Sidebar';
 import Content from './components/Content/Content';
 import Games from './components/Games/Games';
 
+const detail = () => {
+  return <div>Detail</div>;
+};
 const about = () => {
   return <div>About</div>;
 };
@@ -20,6 +23,7 @@ function App() {
       <Sidebar />
       <Content>
         <Switch>
+          <Route path="/games/:id" component={detail} />
           <Route path="/about" component={about} />
           <Route path="/contacts" component={contacts} />
           <Route path="/" exact component={Games} />
