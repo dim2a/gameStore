@@ -5,6 +5,7 @@ import Header from './components/Header/Header';
 import Sidebar from './components/Sidebar/Sidebar';
 import Content from './components/Content/Content';
 import Games from './components/Games/Games';
+import Game from './components/Game/Game';
 
 const detail = props => {
   console.log(props);
@@ -24,7 +25,7 @@ function App() {
       <Sidebar />
       <Content>
         <Switch>
-          <Route path="/games/:id" component={detail} />
+          <Route path="/games/:id" component={Game} />
           <Route path="/about" component={about} />
           <Route path="/contacts" component={contacts} />
           <Route path="/" exact component={Games} />
