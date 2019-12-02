@@ -19,24 +19,24 @@ class Games extends Component {
     this.props.fetchGames();
   }
 
-  renderGames(game) {
-    const { id, img, title, description, downloads } = game;
-    return (
-      <GameCardTag key={id}>
-        <img src={img} alt={title} />
-        <Head2Tag>{title}</Head2Tag>
-        <Head4Tag>{`${R.take(50, description)}...`}</Head4Tag>
-        <NavLink to={`/games/${id}`}>Detail</NavLink>
-        <Head4Tag>{`Downloads: ${downloads}`}</Head4Tag>
-      </GameCardTag>
-    );
+  renderGames(games) {
+    return games.map(game => {
+      const { id, img, title, description, downloads } = game;
+      return (
+        <GameCardTag key={id}>
+          <ImgTag src={img} alt={title} />
+          <Head2Tag>{title}</Head2Tag>
+          <Head4Tag>{`${R.take(50, description)}...`}</Head4Tag>
+          <NavLink to={`/games/${id}`}>Detail</NavLink>
+          <Head4Tag>{`Downloads: ${downloads}`}</Head4Tag>
+        </GameCardTag>
+      );
+    });
   }
 
   render() {
     const { games } = this.props;
-    return (
-      <GamesListTag>{games.map(game => this.renderGames(game))}</GamesListTag>
-    );
+    return <GamesListTag>{games && this.renderGames(games)}</GamesListTag>;
   }
 }
 
@@ -63,6 +63,10 @@ const GameCardTag = styled.div`
   text-decoration: none;
   display: inline-block;
   flex-direction: column;
+`;
+const ImgTag = styled.img`
+  max-width: 180px;
+  max-height: 180px;
 `;
 const Head2Tag = styled.h2`
   margin: 5px 0;

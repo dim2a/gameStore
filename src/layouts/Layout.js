@@ -13,6 +13,7 @@ const LayoutTag = styled.div`
   grid-template-areas: 'header header' 'sidebar content';
   max-width: 1200px;
   margin: 0 auto;
+  min-height: 100vh;
 `;
 
 export default Layout;

@@ -1,6 +1,6 @@
 import * as R from 'ramda';
 
-const getGameById = (state, id) => {
+export const getGameById = (state, id) => {
   return R.prop(id, state.games);
 };
 

@@ -7,17 +7,6 @@ import Content from './components/Content/Content';
 import Games from './components/Games/Games';
 import Game from './components/Game/Game';
 
-const detail = props => {
-  console.log(props);
-  return <div>{`Detail ${props.match.params.id}`}</div>;
-};
-const about = () => {
-  return <div>About</div>;
-};
-const contacts = () => {
-  return <div>Contacts</div>;
-};
-
 function App() {
   return (
     <Layout>
@@ -26,8 +15,6 @@ function App() {
       <Content>
         <Switch>
           <Route path="/games/:id" component={Game} />
-          <Route path="/about" component={about} />
-          <Route path="/contacts" component={contacts} />
           <Route path="/" exact component={Games} />
           <Redirect to="/" />
         </Switch>
