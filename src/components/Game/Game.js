@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 import { fetchGameById, addGameToCart } from '../../redux/actions/gamesAction';
 import { getGameById } from '../../utils/selectors';
@@ -22,7 +23,12 @@ class Game extends Component {
           <p>{description}</p>
         </WrapperTag>
         <OrderWrapperTag>
-          <button onClick={() => addGameToCart(id)}>Buy now</button>
+          <div>
+            <button onClick={() => addGameToCart(id)}>Add to cart</button>
+            <button>
+              <NavLink to={`/cart`}>Buy now</NavLink>
+            </button>
+          </div>
           <h4>{`Price: ${price}$`}</h4>
         </OrderWrapperTag>
       </>
@@ -58,7 +64,8 @@ const ImgTag = styled.img`
 `;
 const OrderWrapperTag = styled.div`
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
+  padding-right: 30px;
   align-items: center;
 `;
 

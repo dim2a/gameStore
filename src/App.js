@@ -6,6 +6,7 @@ import Sidebar from './components/Sidebar/Sidebar';
 import Content from './components/Content/Content';
 import Games from './components/Games/Games';
 import Game from './components/Game/Game';
+import Cart from './components/Cart/Cart';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
       <Content>
         <Switch>
           <Route path="/games/:id" component={Game} />
+          <Route path="/cart" component={Cart} />
           <Route path="/" exact component={Games} />
           <Redirect to="/" />
         </Switch>
