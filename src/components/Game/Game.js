@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import styled from 'styled-components';
-import { fetchGameById } from '../../redux/actions/gamesAction';
+import { fetchGameById, addGameToCart } from '../../redux/actions/gamesAction';
 import { getGameById } from '../../utils/selectors';
 
 class Game extends Component {
@@ -12,7 +12,8 @@ class Game extends Component {
 
   gameRender(game) {
     console.log(`gameRender`);
-    const { title, img, description, price } = game;
+    const { addGameToCart } = this.props;
+    const { title, img, description, price, id } = game;
     return (
       <>
         <h2>{title}</h2>
@@ -21,7 +22,7 @@ class Game extends Component {
           <p>{description}</p>
         </WrapperTag>
         <OrderWrapperTag>
-          <button>Buy now</button>
+          <button onClick={() => addGameToCart(id)}>Buy now</button>
           <h4>{`Price: ${price}$`}</h4>
         </OrderWrapperTag>
       </>
@@ -44,6 +45,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = {
   fetchGameById,
+  addGameToCart,
 };
 
 const WrapperTag = styled.div`
