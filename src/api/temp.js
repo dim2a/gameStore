@@ -289,7 +289,7 @@ let store = {
       downloads: '2',
     },
     {
-      id: 25,
+      id: '25',
       categoryId: '4',
       title: 'Game25',
       created: '',
@@ -301,7 +301,7 @@ let store = {
       downloads: '2',
     },
     {
-      id: 26,
+      id: '26',
       categoryId: '4',
       title: 'Game26',
       created: '',
@@ -313,7 +313,7 @@ let store = {
       downloads: '2',
     },
     {
-      id: 27,
+      id: '27',
       categoryId: '4',
       title: 'Game27',
       created: '',
@@ -325,7 +325,7 @@ let store = {
       downloads: '2',
     },
     {
-      id: 28,
+      id: '28',
       categoryId: '4',
       title: 'Game28',
       created: '',
@@ -337,7 +337,7 @@ let store = {
       downloads: '2',
     },
     {
-      id: 29,
+      id: '29',
       categoryId: '4',
       title: 'Game29',
       created: '',
@@ -349,7 +349,7 @@ let store = {
       downloads: '2',
     },
     {
-      id: 30,
+      id: '30',
       categoryId: '4',
       title: 'Game30',
       created: '',
@@ -361,7 +361,7 @@ let store = {
       downloads: '2',
     },
     {
-      id: 31,
+      id: '31',
       categoryId: '4',
       title: 'Game31',
       created: '',
@@ -373,7 +373,7 @@ let store = {
       downloads: '2',
     },
     {
-      id: 32,
+      id: '32',
       categoryId: '5',
       title: 'Game32',
       img:
@@ -384,7 +384,7 @@ let store = {
       downloads: '2',
     },
     {
-      id: 33,
+      id: '33',
       categoryId: '5',
       title: 'Game33',
       img:
@@ -395,7 +395,7 @@ let store = {
       downloads: '2',
     },
     {
-      id: 34,
+      id: '34',
       categoryId: '5',
       title: 'Game34',
       img:
@@ -406,7 +406,7 @@ let store = {
       downloads: '2',
     },
     {
-      id: 35,
+      id: '35',
       categoryId: '5',
       title: 'Game35',
       img:
@@ -417,7 +417,7 @@ let store = {
       downloads: '2',
     },
     {
-      id: 36,
+      id: '36',
       categoryId: '5',
       title: 'Game36',
       img:
@@ -428,7 +428,7 @@ let store = {
       downloads: '2',
     },
     {
-      id: 37,
+      id: '37',
       categoryId: '5',
       title: 'Game37',
       img:
@@ -439,7 +439,7 @@ let store = {
       downloads: '2',
     },
     {
-      id: 38,
+      id: '38',
       categoryId: '5',
       title: 'Game38',
       img:
@@ -450,7 +450,7 @@ let store = {
       downloads: '2',
     },
     {
-      id: 39,
+      id: '39',
       categoryId: '5',
       title: 'Game39',
       img:
