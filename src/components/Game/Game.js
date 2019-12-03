@@ -25,7 +25,7 @@ class Game extends Component {
         <OrderWrapperTag>
           <div>
             <button onClick={() => addGameToCart(id)}>Add to cart</button>
-            <button>
+            <button onClick={() => addGameToCart(id)}>
               <NavLink to={`/cart`}>Buy now</NavLink>
             </button>
           </div>

@@ -10,3 +10,12 @@ export const getGames = state => {
 };
 
 export const getCartCount = state => state.cart.length;
+
+export const getTotalPrice = state => {
+  const totalPrice = R.compose(
+    R.sum,
+    R.pluck('price'),
+    R.map(id => getGameById(state, id))
+  )(Object.values(state.cart));
+  return totalPrice;
+};

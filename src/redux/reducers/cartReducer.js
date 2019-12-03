@@ -6,7 +6,14 @@ const initialState = {};
 export default (state = initialState, { type, payload }) => {
   switch (type) {
     case ADD_GAME_TO_CART:
-      return R.append(payload, state);
+      try {
+        if (state.includes(payload)) {
+          return state;
+        }
+      } catch {
+        return R.append(payload, state);
+      }
+      break;
     default:
       return state;
   }
