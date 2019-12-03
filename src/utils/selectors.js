@@ -8,3 +8,5 @@ export const getGames = state => {
   const games = R.map(id => getGameById(state, id), state.gamesPage.ids);
   return games;
 };
+
+export const getCartCount = state => state.cart.length;
