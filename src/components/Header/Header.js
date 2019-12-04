@@ -5,6 +5,7 @@ import { NavLink } from 'react-router-dom';
 import { getCartCount } from '../../utils/selectors';
 
 const Header = ({ cartCount }) => {
+  //debugger;
   return (
     <HeaderTag>
       <NavLink to={`/cart`}>
@@ -12,7 +13,7 @@ const Header = ({ cartCount }) => {
           src="https://static.thenounproject.com/png/16229-200.png"
           alt="cart"
         />
-        {cartCount && <CounterTag>{cartCount}</CounterTag>}
+        {cartCount > 0 && <CounterTag>{cartCount}</CounterTag>}
       </NavLink>
     </HeaderTag>
   );

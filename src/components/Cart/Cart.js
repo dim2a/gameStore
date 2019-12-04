@@ -1,7 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { getCartCount, getTotalPrice } from '../../utils/selectors';
-
 const Cart = ({ cartCount, price }) => {
   return (
     <div>
