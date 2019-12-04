@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const Content = props => {
-  return <ContentTag>{props.children}</ContentTag>;
+const Content = ({ children }) => {
+  return <ContentTag>{children}</ContentTag>;
 };
 
 const ContentTag = styled.div`

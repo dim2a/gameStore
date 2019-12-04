@@ -7,12 +7,11 @@ import { getGameById } from '../../utils/selectors';
 
 class Game extends Component {
   componentDidMount() {
-    console.log(`componentDidMount`);
-    this.props.fetchGameById(this.props.match.params.id);
+    const { fetchGameById, match } = this.props;
+    fetchGameById(match.params.id);
   }
 
   gameRender(game) {
-    console.log(`gameRender`);
     const { addGameToCart } = this.props;
     const { title, img, description, price, id } = game;
     return (
@@ -36,18 +35,14 @@ class Game extends Component {
   }
 
   render() {
-    console.log('render');
     const { game } = this.props;
     return <div>{game && this.gameRender(game)}</div>;
   }
 }
 
-const mapStateToProps = state => {
-  console.log(`mapStateToProps`);
-  return {
-    game: getGameById(state, state.gamePage.id),
-  };
-};
+const mapStateToProps = state => ({
+  game: getGameById(state, state.gamePage.id),
+});
 
 const mapDispatchToProps = {
   fetchGameById,

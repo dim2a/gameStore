@@ -75,7 +75,7 @@ const Head4Tag = styled.h4`
   margin: 5px 0;
 `;
 
-let WithUrlDataComponent = withRouter(Games);
+const WithUrlDataComponent = withRouter(Games);
 
 export default connect(
   mapStateToProps,

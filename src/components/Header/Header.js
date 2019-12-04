@@ -5,7 +5,6 @@ import { NavLink } from 'react-router-dom';
 import { getCartCount } from '../../utils/selectors';
 
 const Header = ({ cartCount }) => {
-  //debugger;
   return (
     <HeaderTag>
       <NavLink to={`/cart`}>
@@ -19,11 +18,9 @@ const Header = ({ cartCount }) => {
   );
 };
 
-const mapStateToProps = state => {
-  return {
-    cartCount: getCartCount(state),
-  };
-};
+const mapStateToProps = state => ({
+  cartCount: getCartCount(state),
+});
 
 const HeaderTag = styled.div`
   grid-area: header;

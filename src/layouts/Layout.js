@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const Layout = props => {
-  return <LayoutTag>{props.children}</LayoutTag>;
+const Layout = ({ children }) => {
+  return <LayoutTag>{children}</LayoutTag>;
 };
 
 const LayoutTag = styled.div`
