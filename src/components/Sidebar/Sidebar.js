@@ -1,8 +1,43 @@
-import React from 'react';
-import style from './Sidebar.module.css';
+import React, { Component } from 'react';
+import classes from './Sidebar.module.css';
+import { connect } from 'react-redux';
+import { searchGame } from '../../redux/actions/gamesAction';
 
-const Sidebar = () => {
-  return <div className={style.Sidebar}>Sidebar</div>;
+class Sidebar extends Component {
+  state = {
+    value: '',
+  };
+
+  submitHandler = e => {
+    e.preventDefault();
+    this.props.searchGame(this.state.value);
+  };
+
+  inputChangeHandler = e => {
+    this.setState({ value: e.target.value });
+    console.log(`value: `, this.state.value);
+  };
+  render() {
+    return (
+      <div className={classes.Sidebar}>
+        <form onSubmit={this.submitHandler}>
+          <label>Search</label>
+          <input
+            onChange={this.inputChangeHandler}
+            type="text"
+            placeholder="search game"
+          />
+          <button>
+            <i className="fas fa-search"></i>
+          </button>
+        </form>
+      </div>
+    );
+  }
+}
+
+const mapDispatchToProps = {
+  searchGame,
 };
 
-export default Sidebar;
+export default connect(null, mapDispatchToProps)(Sidebar);

@@ -6,6 +6,7 @@ import {
   FETCH_GAME_BY_ID_SUCCESS,
   FETCH_GAME_BY_ID_FAILURE,
   ADD_GAME_TO_CART,
+  SEARCH_GAME,
 } from './actionTypes';
 import { fetchGames as fetchGamesApi } from '../../api/index';
 import { fetchGameById as fetchGameByIdApi } from '../../api/index';
@@ -50,5 +51,13 @@ export const addGameToCart = gameId => dispatch => {
   dispatch({
     type: ADD_GAME_TO_CART,
     payload: gameId,
+  });
+};
+
+export const searchGame = title => dispatch => {
+  //const game =
+  dispatch({
+    type: SEARCH_GAME,
+    payload: title,
   });
 };
