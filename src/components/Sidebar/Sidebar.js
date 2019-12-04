@@ -1,13 +1,8 @@
 import React from 'react';
-import styled from 'styled-components';
+import style from './Sidebar.module.css';
 
 const Sidebar = () => {
-  return <SidebarTag>Sidebar</SidebarTag>;
+  return <div className={style.Sidebar}>Sidebar</div>;
 };
-
-const SidebarTag = styled.div`
-  grid-area: sidebar;
-  background-color: blue;
-`;
 
 export default Sidebar;

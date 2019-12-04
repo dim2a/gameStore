@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { NavLink } from 'react-router-dom';
-import styled from 'styled-components';
+import style from './Game.module.css';
 import { fetchGameById, addGameToCart } from '../../redux/actions/gamesAction';
 import { getGameById } from '../../utils/selectors';
 
@@ -17,11 +17,11 @@ class Game extends Component {
     return (
       <>
         <h2>{title}</h2>
-        <WrapperTag>
-          <ImgTag src={img} alt={title} />
+        <div className={style.wrapper}>
+          <img className={style.icon} src={img} alt={title} />
           <p>{description}</p>
-        </WrapperTag>
-        <OrderWrapperTag>
+        </div>
+        <div className={style.order}>
           <div>
             <button onClick={() => addGameToCart(id)}>Add to cart</button>
             <button onClick={() => addGameToCart(id)}>
@@ -29,7 +29,7 @@ class Game extends Component {
             </button>
           </div>
           <h4>{`Price: ${price}$`}</h4>
-        </OrderWrapperTag>
+        </div>
       </>
     );
   }
@@ -48,20 +48,5 @@ const mapDispatchToProps = {
   fetchGameById,
   addGameToCart,
 };
-
-const WrapperTag = styled.div`
-  display: flex;
-`;
-const ImgTag = styled.img`
-  max-width: 180px;
-  max-height: 180px;
-  margin: auto 10px auto 0;
-`;
-const OrderWrapperTag = styled.div`
-  display: flex;
-  justify-content: space-between;
-  padding-right: 30px;
-  align-items: center;
-`;
 
 export default connect(mapStateToProps, mapDispatchToProps)(Game);

@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { NavLink, withRouter } from 'react-router-dom';
 import { fetchGames } from '../../redux/actions/gamesAction';
 import { getGames } from '../../utils/selectors';
-import styled from 'styled-components';
+import style from './Games.module.css';
 import * as R from 'ramda';
 
 // const Games = props => {
@@ -23,20 +23,20 @@ class Games extends Component {
     return games.map(game => {
       const { id, img, title, description, downloads } = game;
       return (
-        <GameCardTag key={id}>
-          <ImgTag src={img} alt={title} />
-          <Head2Tag>{title}</Head2Tag>
-          <Head4Tag>{`${R.take(50, description)}...`}</Head4Tag>
+        <div className={style.card} key={id}>
+          <img className={style.icon} src={img} alt={title} />
+          <h2 className={style.title}>{title}</h2>
+          <h4 className={style.title}>{`${R.take(50, description)}...`}</h4>
           <NavLink to={`/games/${id}`}>Detail</NavLink>
-          <Head4Tag>{`Downloads: ${downloads}`}</Head4Tag>
-        </GameCardTag>
+          <h4>{`Downloads: ${downloads}`}</h4>
+        </div>
       );
     });
   }
 
   render() {
     const { games } = this.props;
-    return <GamesListTag>{games && this.renderGames(games)}</GamesListTag>;
+    return <div className={style.list}>{games && this.renderGames(games)}</div>;
   }
 }
 
@@ -47,33 +47,6 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = {
   fetchGames,
 };
-
-const GamesListTag = styled.div`
-  text-align: center;
-`;
-const GameCardTag = styled.div`
-  margin: 5px;
-  padding: 5px;
-  width: 250px;
-  height: 330px;
-  text-align: -webkit-center;
-  border: 2px solid #7b808a;
-  border-radius: 10px;
-  text-align: -webkit-center;
-  text-decoration: none;
-  display: inline-block;
-  flex-direction: column;
-`;
-const ImgTag = styled.img`
-  max-width: 180px;
-  max-height: 180px;
-`;
-const Head2Tag = styled.h2`
-  margin: 5px 0;
-`;
-const Head4Tag = styled.h4`
-  margin: 5px 0;
-`;
 
 const WithUrlDataComponent = withRouter(Games);
 

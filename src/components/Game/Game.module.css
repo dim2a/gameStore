@@ -1,0 +1,16 @@
+.wrapper{
+    display: flex;
+}
+
+.icon{
+    max-width: 180px;
+  max-height: 180px;
+  margin: auto 10px auto 0;
+}
+
+.order{
+    display: flex;
+  justify-content: space-between;
+  padding-right: 30px;
+  align-items: center;
+}

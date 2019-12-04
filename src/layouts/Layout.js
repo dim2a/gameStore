@@ -1,19 +1,8 @@
 import React from 'react';
-import styled from 'styled-components';
+import style from './Layout.module.css';
 
 const Layout = ({ children }) => {
-  return <LayoutTag>{children}</LayoutTag>;
+  return <div className={style.Layout}>{children}</div>;
 };
-
-const LayoutTag = styled.div`
-  display: grid;
-  grid-template-rows: 60px 1fr;
-  grid-template-columns: 3fr 10fr;
-  grid-gap: 10px;
-  grid-template-areas: 'header header' 'sidebar content';
-  max-width: 1200px;
-  margin: 0 auto;
-  min-height: 100vh;
-`;
 
 export default Layout;

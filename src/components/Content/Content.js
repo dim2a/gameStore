@@ -1,14 +1,8 @@
 import React from 'react';
-import styled from 'styled-components';
+import style from './Content.module.css';
 
 const Content = ({ children }) => {
-  return <ContentTag>{children}</ContentTag>;
+  return <div className={style.Content}>{children}</div>;
 };
-
-const ContentTag = styled.div`
-  grid-area: content;
-  background-color: #eee;
-  padding: 10px;
-`;
 
 export default Content;

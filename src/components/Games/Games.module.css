@@ -1,0 +1,26 @@
+.list{
+    text-align: center;
+}
+
+.card{
+    margin: 5px;
+  padding: 5px;
+  width: 250px;
+  height: 330px;
+  text-align: -webkit-center;
+  border: 2px solid #7b808a;
+  border-radius: 10px;
+  text-align: -webkit-center;
+  text-decoration: none;
+  display: inline-block;
+  flex-direction: column;
+}
+
+.icon{
+    max-width: 180px;
+  max-height: 180px;
+}
+
+.title{
+    margin: 5px 0;
+}

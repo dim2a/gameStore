@@ -1,0 +1,25 @@
+.Header{
+    grid-area: header;
+  background-color: green;
+  position: relative;
+}
+
+.cart{
+    max-height: 65px;
+  max-width: 65px;
+  cursor: pointer;
+}
+
+.counter{
+    background-color: red;
+  border-radius: 50%;
+  color: black;
+  font-size: 17px;
+  text-align: center;
+  line-height: 20px;
+  height: 20px;
+  width: 20px;
+  position: absolute;
+  top: 5px;
+  left: 25px;
+}
