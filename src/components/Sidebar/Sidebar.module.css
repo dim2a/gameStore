@@ -1,4 +1,9 @@
 .Sidebar{
     grid-area: sidebar;
   background-color: blue;
+  padding: 10px;
+}
+
+.input{
+  width: 140px;
 }

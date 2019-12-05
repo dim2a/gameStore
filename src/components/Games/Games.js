@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { NavLink, withRouter } from 'react-router-dom';
-import { fetchGames } from '../../redux/actions/gamesAction';
+import { fetchGames, fetchCategories } from '../../redux/actions/gamesAction';
 import { getGames } from '../../utils/selectors';
 import style from './Games.module.css';
 import * as R from 'ramda';
@@ -16,7 +16,9 @@ import * as R from 'ramda';
 
 class Games extends Component {
   componentDidMount() {
-    this.props.fetchGames();
+    const { fetchGames, fetchCategories } = this.props;
+    fetchGames();
+    fetchCategories();
   }
 
   renderGames(games) {
@@ -46,6 +48,7 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = {
   fetchGames,
+  fetchCategories,
 };
 
 const WithUrlDataComponent = withRouter(Games);

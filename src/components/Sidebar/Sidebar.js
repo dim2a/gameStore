@@ -21,8 +21,8 @@ class Sidebar extends Component {
     return (
       <div className={classes.Sidebar}>
         <form onSubmit={this.submitHandler}>
-          <label>Search</label>
           <input
+            className={classes.input}
             onChange={this.inputChangeHandler}
             type="text"
             placeholder="search game"
