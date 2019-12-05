@@ -25,3 +25,7 @@ export const getTotalPrice = state => {
   )(Object.values(state.cart));
   return totalPrice;
 };
+
+export const getCategories = state => {
+  return R.values(state.categories);
+};

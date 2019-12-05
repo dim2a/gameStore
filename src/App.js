@@ -15,6 +15,7 @@ function App() {
       <Sidebar />
       <Content>
         <Switch>
+          <Route path="/categories/:id" component={Games} />
           <Route path="/games/:id" component={Game} />
           <Route path="/cart" component={Cart} />
           <Route path="/" exact component={Games} />
