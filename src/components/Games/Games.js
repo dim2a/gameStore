@@ -42,8 +42,8 @@ class Games extends Component {
   }
 }
 
-const mapStateToProps = state => ({
-  games: getGames(state),
+const mapStateToProps = (state, ownProps) => ({
+  games: getGames(state, ownProps),
 });
 
 const mapDispatchToProps = {

@@ -24,7 +24,7 @@ class Categories extends Component {
     return categories.map(category => {
       const { id, name } = category;
       return (
-        <button>
+        <button key={id}>
           <NavLink to={`/categories/${id}`}>{name}</NavLink>
         </button>
       );
@@ -45,7 +45,12 @@ class Categories extends Component {
           <button>
             <i className="fas fa-search"></i>
           </button>
-          {categories && this.categoriesRender()}
+          <div>
+            <button>
+              <NavLink to={'/'}>All</NavLink>
+            </button>
+            {categories && this.categoriesRender()}
+          </div>
         </form>
       </div>
     );

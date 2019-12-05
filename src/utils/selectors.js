@@ -4,11 +4,17 @@ export const getGameById = (state, id) => {
   return R.prop(id, state.games);
 };
 
-export const getGames = state => {
+export const getGames = (state, ownProps) => {
+  const activeCategoryId = ownProps.match.params.id;
   const applySearch = item =>
     R.contains(state.gamesPage.search, R.prop('title', item));
+
+  const applyCategory = item =>
+    R.equals(activeCategoryId, R.prop('categoryId', item));
+
   const games = R.compose(
     R.filter(applySearch),
+    R.when(R.always(activeCategoryId), R.filter(applyCategory)),
     R.map(id => getGameById(state, id))
   )(state.gamesPage.ids);
   // const games = R.map(id => getGameById(state, id), state.gamesPage.ids);
