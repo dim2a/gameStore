@@ -35,3 +35,9 @@ export const getTotalPrice = state => {
 export const getCategories = state => {
   return R.values(state.categories);
 };
+
+export const getCartGames = state => {
+  const cartIds = state.cart;
+  const games = cartIds.map(id => getGameById(state, id));
+  return games;
+};
