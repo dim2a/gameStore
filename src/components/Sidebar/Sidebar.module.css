@@ -1,5 +1,5 @@
 .Sidebar{
     grid-area: sidebar;
-  background-color: blue;
+    background-color: #eee;
   padding: 10px;
 }

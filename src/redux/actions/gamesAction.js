@@ -10,6 +10,7 @@ import {
   FETCH_CATEGORIES_START,
   FETCH_CATEGORIES_SUCCESS,
   FETCH_CATEGORIES_FAILURE,
+  DELETE_GAME_FROM_CART,
 } from './actionTypes';
 import {
   fetchGames as fetchGamesApi,
@@ -83,4 +84,11 @@ export const fetchCategories = () => async dispatch => {
       error: true,
     });
   }
+};
+
+export const deleteFromCart = id => dispatch => {
+  dispatch({
+    type: DELETE_GAME_FROM_CART,
+    payload: id,
+  });
 };

@@ -2,6 +2,14 @@
     grid-area: header;
   background-color: green;
   position: relative;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 10px;
+}
+
+.logo {
+  text-decoration: none;
+  color: #000;
 }
 
 .cart{
@@ -21,5 +29,5 @@
   width: 20px;
   position: absolute;
   top: 5px;
-  left: 25px;
+  left: 95%;
 }

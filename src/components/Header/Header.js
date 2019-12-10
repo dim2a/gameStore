@@ -3,11 +3,15 @@ import style from './Header.module.css';
 import { connect } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import { getCartCount } from '../../utils/selectors';
+import classes from './Header.module.css';
 
 const Header = ({ cartCount }) => {
   const imgLink = 'https://static.thenounproject.com/png/16229-200.png';
   return (
     <div className={style.Header}>
+      <NavLink className={classes.logo} to={`/`}>
+        <h3>Storage</h3>
+      </NavLink>
       <NavLink to={`/cart`}>
         <img className={style.cart} src={imgLink} alt="cart" />
         {cartCount > 0 && <div className={style.counter}>{cartCount}</div>}
