@@ -182,11 +182,11 @@ let store = {
     },
     {
       id: '16',
-      categoryId: '3',
+      categoryId: '2',
       title: 'Game16',
       created: '',
       img:
-        'https://lh3.googleusercontent.com/y2lL6g2QjBChN2cABb5s32_4QCs00mn2aRyttD9vv8JTnVpupXL8ECdK4ht091RBd911=s180',
+        'https://lh3.googleusercontent.com/wcCJrt5KzkZb-1w1gbwkx35EaXjFNLoIiqnhicFZTC46nRPQpM3nsouuYDly1bYC9CXx=s180-rw',
       description:
         'Lorem asd ipsum dolor sit amet consectetur adipisicing elit. Recusandae molestias, ullam corrupti aliquid distinctio reprehenderit architecto doloribus ut sed veritatis velit error debitis expedita tempore voluptates ratione quae deserunt consequuntur, eligendi quo rem! Perferendis voluptate eos ipsa asperiores ipsam voluptates libero recusandae quisquam eveniet veritatis, minima aspernatur repudiandae vitae totam ullam minus error molestiae eaque repellendus aut harum, non odit? Accusamus reiciendis magni sint aliquid voluptatum placeat, eaque ipsum rerum? Eos magni iure itaque esse sit? Voluptates doloremque exercitationem blanditiis cumque praesentium quam ipsam ipsum quisquam quia nihil hic nulla id autem eaque non aperiam excepturi, optio neque asperiores? Quisquam!',
       price: 20,

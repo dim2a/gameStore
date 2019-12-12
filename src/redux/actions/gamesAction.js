@@ -11,11 +11,15 @@ import {
   FETCH_CATEGORIES_SUCCESS,
   FETCH_CATEGORIES_FAILURE,
   DELETE_GAME_FROM_CART,
+  BUY_ALL_START,
+  BUY_ALL_SUCCESS,
+  BUY_ALL_FAILURE,
 } from './actionTypes';
 import {
   fetchGames as fetchGamesApi,
   fetchGameById as fetchGameByIdApi,
   fetchCategories as fetchCategoriesApi,
+  pachGames as pachGamesApi,
 } from '../../api/index';
 
 export const fetchGames = () => async dispatch => {
@@ -91,4 +95,23 @@ export const deleteFromCart = id => dispatch => {
     type: DELETE_GAME_FROM_CART,
     payload: id,
   });
+};
+
+export const buyAll = (cart, games) => async dispatch => {
+  dispatch({ type: BUY_ALL_START });
+
+  try {
+    await pachGamesApi(games);
+    dispatch({
+      type: BUY_ALL_SUCCESS,
+      payload: cart,
+    });
+  } catch (err) {
+    console.log('error: ', err);
+    dispatch({
+      type: BUY_ALL_FAILURE,
+      payload: err,
+      error: true,
+    });
+  }
 };

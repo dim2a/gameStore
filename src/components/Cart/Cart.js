@@ -6,9 +6,16 @@ import {
   getTotalPrice,
   getCartGames,
 } from '../../utils/selectors';
-import { deleteFromCart } from '../../redux/actions/gamesAction';
+import { deleteFromCart, buyAll } from '../../redux/actions/gamesAction';
 
-const Cart = ({ cartCount = 0, price, games, deleteFromCart }) => {
+const Cart = ({
+  cartCount = 0,
+  price,
+  games,
+  deleteFromCart,
+  buyAll,
+  cart,
+}) => {
   const renderItems = games => {
     return games.map(game => {
       const { img, title, price, id } = game;
@@ -22,17 +29,26 @@ const Cart = ({ cartCount = 0, price, games, deleteFromCart }) => {
       );
     });
   };
-
   return (
     <div>
       <h4>{`Items: ${cartCount}`}</h4>
       {renderItems(games)}
       <h4>{`Total price: ${price}$`}</h4>
+      {cart.length > 0 && (
+        <button
+          onClick={() => {
+            buyAll(cart, games);
+          }}
+        >
+          Buy All
+        </button>
+      )}
     </div>
   );
 };
 
 const mapStateToProps = state => ({
+  cart: state.cart,
   cartCount: getCartCount(state),
   price: getTotalPrice(state),
   games: getCartGames(state),
@@ -40,6 +56,7 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = {
   deleteFromCart,
+  buyAll,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Cart);

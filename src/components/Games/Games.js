@@ -5,8 +5,8 @@ import { fetchGames, fetchCategories } from '../../redux/actions/gamesAction';
 import { getGames } from '../../utils/selectors';
 import style from './Games.module.css';
 import * as R from 'ramda';
-//import axios from 'axios';
-//import store from '../../api/temp';
+// import axios from 'axios';
+// import store from '../../api/temp';
 
 // const Games = props => {
 //   useEffect(() => {
@@ -28,11 +28,15 @@ class Games extends Component {
     //   .then(response => console.log('response: ', response))
     //   .catch(error => console.log('error: ', error));
     // axios
-    //   .post(
-    //     'https://game-store-433b4.firebaseio.com/categories.json',
-    //     store.categories
-    //   )
+    //   .post('https://game-store-433b4.firebaseio.com/games.json', store.games)
     //   .then(response => console.log('response: ', response));
+    //   const newData = {
+    //     downloads: 3,
+    //   };
+    //   axios.patch(
+    //     'https://game-store-433b4.firebaseio.com/games/-LvoSUF9dx14udApLJZY/0.json',
+    //     newData
+    //   );
   }
 
   renderGames(games) {
