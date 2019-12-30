@@ -1,26 +1,29 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import classes from './Categories.module.css';
 import { connect } from 'react-redux';
 import { NavLink, withRouter } from 'react-router-dom';
 import { searchGame } from '../../redux/actions/gamesAction';
 import { getCategories } from '../../utils/selectors';
 
-class Categories extends Component {
-  state = {
-    value: '',
-  };
+const Categories = props => {
+  console.log('props', props);
+  const [valueInput, changeValueInput] = useState('');
+  // state = {
+  //   value: '',
+  // };
 
-  submitHandler = e => {
+  const submitHandler = e => {
     e.preventDefault();
-    this.props.searchGame(this.state.value);
+    props.searchGame(valueInput);
   };
 
-  inputChangeHandler = e => {
-    this.setState({ value: e.target.value });
+  const inputChangeHandler = e => {
+    changeValueInput(e.target.value);
+    console.log('changeValueInput', valueInput);
   };
 
-  categoriesRender = () => {
-    const { categories } = this.props;
+  const categoriesRender = () => {
+    const { categories } = props;
     return categories.map(category => {
       const { id, name } = category;
       return (
@@ -31,31 +34,29 @@ class Categories extends Component {
     });
   };
 
-  render() {
-    const { categories } = this.props;
-    return (
-      <div>
-        <form onSubmit={this.submitHandler}>
-          <input
-            className={classes.input}
-            onChange={this.inputChangeHandler}
-            type="text"
-            placeholder="search game"
-          />
+  const { categories } = props;
+  return (
+    <div>
+      <form onSubmit={submitHandler}>
+        <input
+          className={classes.input}
+          onChange={inputChangeHandler}
+          type="text"
+          placeholder="search game"
+        />
+        <button>
+          <i className="fas fa-search"></i>
+        </button>
+        <div>
           <button>
-            <i className="fas fa-search"></i>
+            <NavLink to={'/'}>All</NavLink>
           </button>
-          <div>
-            <button>
-              <NavLink to={'/'}>All</NavLink>
-            </button>
-            {categories && this.categoriesRender()}
-          </div>
-        </form>
-      </div>
-    );
-  }
-}
+          {categories && categoriesRender()}
+        </div>
+      </form>
+    </div>
+  );
+};
 
 const mapDispatchToProps = {
   searchGame,

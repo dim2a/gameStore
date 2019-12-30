@@ -7,7 +7,10 @@ export const getGameById = (state, id) => {
 export const getGames = (state, ownProps) => {
   const activeCategoryId = ownProps.match.params.id;
   const applySearch = item =>
-    R.contains(state.gamesPage.search, R.prop('title', item));
+    R.contains(
+      state.gamesPage.search.toLowerCase(),
+      R.prop('title', item).toLowerCase()
+    );
 
   const applyCategory = item =>
     R.equals(activeCategoryId, R.prop('categoryId', item));
