@@ -6,11 +6,7 @@ import { searchGame } from '../../redux/actions/gamesAction';
 import { getCategories } from '../../utils/selectors';
 
 const Categories = props => {
-  console.log('props', props);
   const [valueInput, changeValueInput] = useState('');
-  // state = {
-  //   value: '',
-  // };
 
   const submitHandler = e => {
     e.preventDefault();
@@ -19,7 +15,6 @@ const Categories = props => {
 
   const inputChangeHandler = e => {
     changeValueInput(e.target.value);
-    console.log('changeValueInput', valueInput);
   };
 
   const categoriesRender = () => {

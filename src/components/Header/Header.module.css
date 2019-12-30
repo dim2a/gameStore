@@ -1,6 +1,6 @@
 .Header{
     grid-area: header;
-  background-color: green;
+    background-color: #eee;
   position: relative;
   display: flex;
   justify-content: space-between;
