@@ -3,7 +3,7 @@ import { Switch, Route, Redirect } from 'react-router-dom';
 import Layout from './layouts/Layout';
 import Header from './components/Header/Header';
 import Sidebar from './components/Sidebar/Sidebar';
-import Content from './components/Content/Content';
+import Content from './containers/Content/Content';
 import Games from './components/Games/Games';
 import Game from './components/Game/Game';
 import Cart from './components/Cart/Cart';

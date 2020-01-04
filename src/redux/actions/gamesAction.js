@@ -107,7 +107,6 @@ export const buyAll = (cart, games) => async dispatch => {
       payload: cart,
     });
   } catch (err) {
-    console.log('error: ', err);
     dispatch({
       type: BUY_ALL_FAILURE,
       payload: err,

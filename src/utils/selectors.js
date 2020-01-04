@@ -20,7 +20,6 @@ export const getGames = (state, ownProps) => {
     R.when(R.always(activeCategoryId), R.filter(applyCategory)),
     R.map(id => getGameById(state, id))
   )(state.gamesPage.ids);
-  // const games = R.map(id => getGameById(state, id), state.gamesPage.ids);
   return games;
 };
 
