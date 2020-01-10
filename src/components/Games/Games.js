@@ -1,10 +1,10 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
-import { NavLink, withRouter } from 'react-router-dom';
 import { fetchGames, fetchCategories } from '../../redux/actions/gamesAction';
 import { getGames } from '../../utils/selectors';
-import style from './Games.module.css';
-import * as R from 'ramda';
+//import style from './Games.module.css';
+import Card from '../../containers/Card/Card';
+import Grid from '@material-ui/core/Grid';
 
 const Games = props => {
   useEffect(() => {
@@ -19,21 +19,20 @@ const Games = props => {
 
   const renderGames = games => {
     return games.map(game => {
-      const { id, img, title, description, downloads } = game;
       return (
-        <div className={style.card} key={id}>
-          <img className={style.icon} src={img} alt={title} />
-          <h2 className={style.title}>{title}</h2>
-          <h4 className={style.title}>{`${R.take(50, description)}...`}</h4>
-          <NavLink to={`/games/${id}`}>Detail</NavLink>
-          <h4>{`Downloads: ${downloads}`}</h4>
-        </div>
+        <Grid item xs={12} sm={4} md={3} key={game.id}>
+          <Card game={game} key={game.id} />
+        </Grid>
       );
     });
   };
 
   const { games } = props;
-  return <div className={style.list}>{games && renderGames(games)}</div>;
+  return (
+    <Grid container spacing={3}>
+      {games && renderGames(games)}
+    </Grid>
+  );
 };
 
 const mapStateToProps = (state, ownProps) => ({
@@ -45,9 +44,4 @@ const mapDispatchToProps = {
   fetchCategories,
 };
 
-const WithUrlDataComponent = withRouter(Games);
-
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(WithUrlDataComponent);
+export default connect(mapStateToProps, mapDispatchToProps)(Games);

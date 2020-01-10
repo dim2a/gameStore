@@ -3,7 +3,7 @@ import classes from './Categories.module.css';
 import { connect } from 'react-redux';
 import { NavLink, withRouter } from 'react-router-dom';
 import { searchGame } from '../../redux/actions/gamesAction';
-import { getCategories } from '../../utils/selectors';
+//import { getCategories } from '../../utils/selectors';
 
 const Categories = props => {
   const [valueInput, changeValueInput] = useState('');
@@ -17,19 +17,19 @@ const Categories = props => {
     changeValueInput(e.target.value);
   };
 
-  const categoriesRender = () => {
-    const { categories } = props;
-    return categories.map(category => {
-      const { id, name } = category;
-      return (
-        <button key={id}>
-          <NavLink to={`/categories/${id}`}>{name}</NavLink>
-        </button>
-      );
-    });
-  };
+  // const categoriesRender = () => {
+  //   const { categories } = props;
+  //   return categories.map(category => {
+  //     const { id, name } = category;
+  //     return (
+  //       <button key={id}>
+  //         <NavLink to={`/categories/${id}`}>{name}</NavLink>
+  //       </button>
+  //     );
+  //   });
+  // };
 
-  const { categories } = props;
+  //const { categories } = props;
   return (
     <div>
       <form onSubmit={submitHandler}>
@@ -46,7 +46,7 @@ const Categories = props => {
           <button>
             <NavLink to={'/'}>All</NavLink>
           </button>
-          {categories && categoriesRender()}
+          {/* {categories && categoriesRender()} */}
         </div>
       </form>
     </div>
@@ -57,13 +57,10 @@ const mapDispatchToProps = {
   searchGame,
 };
 
-const mapStateToProps = state => ({
-  categories: getCategories(state),
-});
+// const mapStateToProps = state => ({
+//   categories: getCategories(state),
+// });
 
-const WithUrlDataComponent = withRouter(Categories);
+//const WithUrlDataComponent = withRouter(Categories);
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(WithUrlDataComponent);
+export default connect(null, mapDispatchToProps)(Categories);

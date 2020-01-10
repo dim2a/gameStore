@@ -7,7 +7,7 @@ import Content from './containers/Content/Content';
 import Games from './components/Games/Games';
 import Game from './components/Game/Game';
 import Cart from './components/Cart/Cart';
-import Categories from './components/Categories/Categories';
+import Categories from './containers/Categories/Categories';
 
 function App() {
   return (

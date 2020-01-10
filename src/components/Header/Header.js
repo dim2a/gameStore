@@ -4,12 +4,13 @@ import { connect } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import { getCartCount } from '../../utils/selectors';
 import cartImg from './Cart.png';
+import logo from './logo.png';
 
 const Header = ({ cartCount }) => {
   return (
     <div className={classes.Header}>
       <NavLink className={classes.logo} to={`/`}>
-        <h3>Store</h3>
+        <img src={logo} alt="logo" className={classes.logo} />
       </NavLink>
       <NavLink to={`/cart`}>
         <img className={classes.cart} src={cartImg} alt="cart" />
