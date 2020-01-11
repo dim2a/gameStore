@@ -6,7 +6,7 @@ import Sidebar from './containers/Sidebar/Sidebar';
 import Content from './containers/Content/Content';
 import Games from './components/Games/Games';
 import Game from './components/Game/Game';
-import Cart from './components/Cart/Cart';
+import Cart from './components/CartPage/CartPage';
 import Categories from './containers/Categories/Categories';
 
 function App() {

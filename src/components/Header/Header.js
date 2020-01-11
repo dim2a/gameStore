@@ -3,8 +3,8 @@ import classes from './Header.module.css';
 import { connect } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import { getCartCount } from '../../utils/selectors';
-import cartImg from './Cart.png';
 import logo from './logo.png';
+import Cart from '../Cart/Cart'
 
 const Header = ({ cartCount }) => {
   return (
@@ -13,8 +13,7 @@ const Header = ({ cartCount }) => {
         <img src={logo} alt="logo" className={classes.logo} />
       </NavLink>
       <NavLink to={`/cart`}>
-        <img className={classes.cart} src={cartImg} alt="cart" />
-        {cartCount > 0 && <div className={classes.counter}>{cartCount}</div>}
+        <Cart cartCount={cartCount}/>
       </NavLink>
     </div>
   );
