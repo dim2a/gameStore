@@ -8,14 +8,7 @@ import {
 } from '../../utils/selectors';
 import { deleteFromCart, buyAll } from '../../redux/actions/gamesAction';
 
-const Cart = ({
-  cartCount = 0,
-  price,
-  games,
-  deleteFromCart,
-  buyAll,
-  cart,
-}) => {
+const Cart = ({ cartCount, price, games, deleteFromCart, buyAll, cart }) => {
   const renderItems = games => {
     return games.map(game => {
       const { img, title, price, id } = game;
@@ -34,7 +27,7 @@ const Cart = ({
       <h4>{`Items: ${cartCount}`}</h4>
       {renderItems(games)}
       <h4>{`Total price: ${price}$`}</h4>
-      {cart.length > 0 && (
+      {cartCount > 0 && (
         <button
           onClick={() => {
             buyAll(cart, games);

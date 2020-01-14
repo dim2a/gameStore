@@ -1,5 +1,5 @@
 import React from 'react';
-import MediaCard from '../../components/MediaCard/MediaCard';
+import MediaCard from '../../components/MaterialUI/MediaCard/MediaCard';
 
 const Card = props => {
   return <MediaCard gameInfo={props} />;

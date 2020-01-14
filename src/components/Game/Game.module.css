@@ -12,5 +12,10 @@
     display: flex;
   justify-content: space-between;
   padding-right: 30px;
-  align-items: center;
+  align-items: center;  
+}
+
+.order a{
+  text-decoration: none;
+  color: black;
 }

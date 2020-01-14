@@ -1,7 +1,7 @@
 import React from 'react';
 import { Switch, Route, Redirect } from 'react-router-dom';
 import Layout from './layouts/Layout';
-import Header from './components/Header/Header';
+import Header from './containers/Header/Header';
 import Sidebar from './containers/Sidebar/Sidebar';
 import Content from './containers/Content/Content';
 import Games from './components/Games/Games';

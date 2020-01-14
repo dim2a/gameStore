@@ -1,5 +1,5 @@
 import React from 'react';
-import Tabs from '../../components/Tabs/Tabs';
+import Tabs from '../../components/MaterialUI/Tabs/Tabs';
 import { connect } from 'react-redux';
 import { getCategories } from '../../utils/selectors';
 
