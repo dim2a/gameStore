@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import SearchInput from '../../components/MaterialUI/Search/Search';
 import { connect } from 'react-redux';
-import { compose } from 'redux';
 import { searchGame } from '../../redux/actions/gamesAction';
 import { withRouter } from 'react-router-dom';
 import * as R from 'ramda';
@@ -75,7 +74,7 @@ const mapStateToProps = state => ({
   games: state.games,
 });
 
-export default compose(
+export default R.compose(
   connect(mapStateToProps, mapDispatchToProps),
   withRouter
 )(Search);

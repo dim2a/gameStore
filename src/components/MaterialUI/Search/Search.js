@@ -5,7 +5,10 @@ import TextField from '@material-ui/core/TextField';
 const useStyles = makeStyles(theme => ({
   root: {
     margin: theme.spacing(1),
-    width: 200,
+    width: 300,
+  },
+  myInput: {
+    width: 300,
   },
 }));
 
@@ -23,6 +26,7 @@ export default function BasicTextFields(props) {
         label="Search"
         variant="outlined"
         onChange={props.inputHandler}
+        className={classes.myInput}
       />
     </form>
   );

@@ -1,10 +1,16 @@
+body{
+  margin: 0;
+  padding: 0;
+  background-color: #f9f7f7;
+}
 .Layout{
     display: grid;
   grid-template-rows: 80px 1fr;
-  grid-template-columns: 3fr 10fr;
+  grid-template-columns: 2fr 10fr;
   grid-gap: 10px;
   grid-template-areas: 'header header' 'sidebar content';
-  max-width: 1200px;
+  min-width: 600px;
+  max-width: 1500px;
   margin: 0 auto;
   min-height: 100vh;
 }
