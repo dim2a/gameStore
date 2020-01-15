@@ -14,6 +14,7 @@ import {
   BUY_ALL_START,
   BUY_ALL_SUCCESS,
   BUY_ALL_FAILURE,
+  TOGGLE_IS_FETCHING,
 } from './actionTypes';
 import {
   fetchGames as fetchGamesApi,
@@ -40,6 +41,13 @@ export const fetchGames = () => async dispatch => {
   }
 };
 
+export const toggleIsFetching = isFetching => dispatch => {
+  dispatch({
+    type: TOGGLE_IS_FETCHING,
+    payload: isFetching,
+  });
+};
+
 export const fetchGameById = id => async dispatch => {
   dispatch({ type: FETCH_GAME_BY_ID_START });
 
@@ -47,8 +55,12 @@ export const fetchGameById = id => async dispatch => {
     const game = await fetchGameByIdApi(id);
     dispatch({
       type: FETCH_GAME_BY_ID_SUCCESS,
-      payload: game,
+      payload: {
+        game,
+        isFetching: false,
+      },
     });
+    //toggleIsFetching(false);
   } catch (err) {
     dispatch({
       type: FETCH_GAME_BY_ID_FAILURE,

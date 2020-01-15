@@ -21,6 +21,7 @@ const Search = props => {
 
   const renderSearchList = () => {
     if (listStatus) {
+      //console.log(valueInput);
       const searchGames = Object.values(props.games).filter(game => {
         return R.contains(
           valueInput.toLowerCase(),
